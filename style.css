@@ -106,7 +106,7 @@ body {
     border: 5px solid #8a77b8;
     display: grid;
     /* grid-template-columns: repeat(4, 1fr); */
-    font-size: 40px;
+    font-size: 50px;
     font-family: calculator, Impact, sans-serif;
     justify-content: center;
     /* font-style: oblique; */
@@ -337,4 +337,5 @@ input::-webkit-outer-spin-button {
     color: #fbc2eb;
     width: 209.5%;
     border-color: #8a77b8;
+
 }
