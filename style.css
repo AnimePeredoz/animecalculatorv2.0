@@ -126,7 +126,7 @@ body {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     font-weight: bold;
-    -webkit-text-stroke: #000000 0.2px;
+    -webkit-text-stroke: #000000 0.3px;
 
 }
 
@@ -339,3 +339,4 @@ input::-webkit-outer-spin-button {
     border-color: #8a77b8;
 
 }
+
