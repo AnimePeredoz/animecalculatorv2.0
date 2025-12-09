@@ -130,10 +130,11 @@ function computeResult(a, op, b) {
         case '×':
             return a * b;
         case '÷':
-            return b === 0 ? 'ПОШЕЛ НАХУЙ' : a / b;
+            return b === 0 ? 'ПОШЕЛ НАХУЙ     ' : a / b;
         case '%':
             return (a * b) / 100;
         default:
             return b;
     }
+
 }
