@@ -1,0 +1,340 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: Impact;
+    src: url(./fonts/Impact.woff2) format("woff2");
+    src: url(./fonts/Impact.woff) format("woff");
+}
+
+@font-face {
+
+    font-family: calculator;
+    src: url(./fonts/Calculator.woff) format("woff");
+    src: url(./fonts/Calculator.woff2) format("woff2");
+}
+
+@font-face {
+    font-family: Anton;
+    src: url(./fonts/Anton-Regular.ttf)
+}
+
+h1 {
+    margin-top: 25px;
+    margin-bottom: 0px;
+    /* -webkit-text-stroke: black 0.1px; */
+
+}
+
+#display {
+    margin-right: 0px;
+    margin-bottom: 0;
+
+}
+
+div h1 span {
+    color: #fbc2eb;
+
+    margin: 0;
+}
+
+.version {
+    color: #a18cd1;
+}
+
+.inst {
+    margin: 0;
+    display: inline-block;
+
+    padding: 0;
+    text-align: right;
+    font-family: calculator, 'Arial', sans-serif;
+    font-style: oblique;
+    margin-top: 0px;
+
+
+
+}
+
+body {
+
+    background-image: linear-gradient();
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff9a9e 0%, #fdb8ba 5%, #fad0c4 10%, #fbc2eb 20%, #a6c1ee 30%, #a18cd1 40%, #8a77b8 50%,
+            #8a77b8 50%, #a18cd1 60%, #a6c1ee 70%, #fbc2eb 80%, #fad0c4 90%, #fdb8ba 95%, #ff9a9e 100%);
+    background-size: 2000% 2000%;
+    animation: gradient-animation 15s ease infinite;
+    overflow: hidden;
+
+
+}
+
+
+
+.name {
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+
+    color: #8a77b8;
+    font-size: 2.5em;
+
+    margin-top: 50px;
+    margin-bottom: 80px;
+    -webkit-text-stroke: #000000 0.0px;
+
+
+
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+#display:enabled {
+    border: 5px solid #8a77b8;
+    display: grid;
+    /* grid-template-columns: repeat(4, 1fr); */
+    font-size: 40px;
+    font-family: calculator, Impact, sans-serif;
+    justify-content: center;
+    /* font-style: oblique; */
+    text-align: right;
+    padding-right: 2px;
+    width: 300px;
+    height: 50px;
+    /* background-color: #fbc2eb; */
+    background-image: url(./images/enter.jpg);
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    color: #fbc2eb;
+    background-position-y: center;
+    background-position-x: center;
+    background-size: 100%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-weight: bold;
+    -webkit-text-stroke: #000000 0.2px;
+
+}
+
+.btn-secondary {
+
+    border: 1px solid #f15fde;
+    margin-top: 0px;
+    height: 31px;
+    background-color: #fbc2eb;
+    padding-right: 15px;
+}
+
+.calculator {
+    display: grid;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 7px;
+    width: 350px;
+    margin: 20 auto;
+    height: 400px;
+    text-align: center;
+    border: 5px solid #8a77b8;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 3.5px;
+    margin-right: 15px
+}
+
+.btn {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, Arial, Helvetica, sans-serif;
+    background-color: #fbc2eb;
+    border-color: #8a77b8;
+    font-size: 35px;
+    color: #8a77b8;
+    -webkit-text-stroke: #000000 1px;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+}
+
+
+input {
+    padding-right: 3em;
+    text-align: right;
+
+
+}
+
+
+button:active {
+    background-color: aqua;
+    transform: scale(0.9);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+
+
+
+
+.btndls {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: #ffaae7;
+
+    color: #fbc2eb
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+#number1 {
+    background-image: url(./images/1.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#number2 {
+    background-image: url(./images/2.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#number3 {
+    background-image: url(./images/3.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#number4 {
+    background-image: url(./images/4.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#number5 {
+    background-image: url(./images/5.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#number6 {
+    background-image: url(./images/6.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#number7 {
+    background-image: url(./images/7.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#number8 {
+    background-image: url(./images/8.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#number9 {
+    background-image: url(./images/9.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#number0 {
+    background-image: url(./images/0.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#btnclear {
+    background-image: url(./images/clear.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#btnac {
+    background-image: url(./images/ac.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#btnprocent {
+    background-image: url(./images/procent.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#btndel {
+    background-image: url(./images/del.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#btnmnozh {
+    background-image: url(./images/mnozh.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#btnminus {
+    background-image: url(./images/minus.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#btnplus {
+    background-image: url(./images/plus.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#btndot {
+    background-image: url(./images/dot.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#btnr {
+    background-image: url(./images/rr.png);
+    background-size: 100%;
+    background-position: center;
+    color: #fbc2eb;
+    width: 209.5%;
+    border-color: #8a77b8;
+}
