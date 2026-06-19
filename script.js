@@ -80,9 +80,62 @@ buttons.forEach(button => {
             if (value === '-') {
                 if (currentInput === '' || currentInput === '-') {
                     currentInput = '-';
-                    display.value += '-';
+                    display.value = '-';
                     return;
                 }
+                else {
+                    currentInput += '';
+                    display.value += '';
+                }
+
+            }
+            if (value === '+') {
+                if (currentInput === '' || currentInput === '+') {
+                    currentInput = '';
+                    display.value = '';
+                    return;
+                }
+                else {
+                    currentInput += '';
+                    display.value += '';
+                }
+
+            }
+            if (value === '×') {
+                if (currentInput === '' || currentInput === '×') {
+                    currentInput = '';
+                    display.value = '';
+                    return;
+                }
+                else {
+                    currentInput += '';
+                    display.value += '';
+                }
+
+            }
+            if (value === '÷') {
+                if (currentInput === '' || currentInput === '÷') {
+                    currentInput = '';
+                    display.value = '';
+                    return;
+                }
+                else {
+                    currentInput += '';
+                    display.value += '';
+                }
+
+            }
+            if (value === '%') {
+                if (currentInput === '' || currentInput === '%') {
+                    currentInput = '';
+                    display.value = '';
+                    return;
+                }
+                else {
+                    currentInput += '';
+                    display.value += '';
+                }
+
             }
 
             if (currentInput !== '' && currentInput !== '-') {
