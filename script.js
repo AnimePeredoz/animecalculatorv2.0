@@ -218,7 +218,7 @@ buttons.forEach(button => {
                 return;
             }
             else {
-                display.value = currentInput !== '' ? currentInput : '0';
+                display.value = currentInput !== '' ? currentInput : '';
             }
 
             isResultDisplayed = true;
