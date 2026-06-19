@@ -40,6 +40,7 @@ let currentInput = '';
 let firstOperand = null;
 let operator = null;
 let isResultDisplayed = false;
+let message = 'ПОШЕЛ НАХУЙ  '
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
@@ -54,10 +55,21 @@ buttons.forEach(button => {
                     currentInput += '0';
                     display.value += '0';
                 }
+                if (!isNaN(currentInput)) {
+                    currentInput += '';
+                    display.value += '';
+                }
+                else {
+                    display.value = '';
+                    currentInput = '';
+                    isResultDisplayed = true;
+                    return;
+                }
             }
+
             if (isResultDisplayed) {
-                display.value = '';
-                currentInput = '';
+                display.value += '';
+                currentInput += '';
                 isResultDisplayed = false;
             }
             currentInput += value;
@@ -82,6 +94,17 @@ buttons.forEach(button => {
                 }
             } else if (isResultDisplayed) {
                 firstOperand = parseFloat(display.value);
+
+            }
+
+            else {
+                display.value = '';
+                currentInput = '';
+                firstOperand = null;
+                operator = null;
+                num = null
+                isResultDisplayed = true;
+                return;
             }
 
             display.value += value;
@@ -89,23 +112,34 @@ buttons.forEach(button => {
             operator = value;
             isResultDisplayed = false;
         }
+
         else if (value === '=') {
-            let secondOperand = 0;
+            let num = 0;
             if (currentInput !== '' && currentInput !== '-') {
-                secondOperand = parseFloat(currentInput);
+                num = parseFloat(currentInput);
             } else if (currentInput === '-') {
-                secondOperand = -parseFloat(currentInput.slice(1));
+                num = -parseFloat(currentInput.slice(1));
             }
             if (operator && firstOperand !== null) {
-                const result = computeResult(firstOperand, operator, secondOperand);
+                const result = computeResult(firstOperand, operator, num);
                 display.value = result;
                 firstOperand = result;
                 currentInput = result.toString();
-            } else {
+
+            }
+            else if (isNaN(currentInput)) {
+                display.value = '0';
+                currentInput = '';
+                isResultDisplayed = true;
+                return;
+            }
+            else {
                 display.value = currentInput !== '' ? currentInput : '0';
             }
+
             isResultDisplayed = true;
             operator = null;
+            firstOperand = null
         }
         else if (value === 'C') {
             display.value = '';
@@ -116,25 +150,42 @@ buttons.forEach(button => {
         }
         else if (value === 'backspace') {
             display.value = display.value.slice(0, -1);
-            currentInput = display.value;
+            currentInput = currentInput.slice(0, -1)
         }
     });
 });
 
-function computeResult(a, op, b) {
-    switch (op) {
-        case '+':
-            return a + b;
-        case '-':
-            return a - b;
-        case '×':
-            return a * b;
-        case '÷':
-            return b === 0 ? 'ПОШЕЛ НАХУЙ     ' : a / b;
-        case '%':
-            return (a * b) / 100;
-        default:
-            return b;
-    }
 
+function computeResult(firstOperand, operator, num) {
+    switch (operator) {
+        case '+':
+            return firstOperand + num;
+        case '-':
+            return firstOperand - num;
+        case '×':
+            return firstOperand * num;
+        case '÷':
+            if (num === 0 || firstOperand === 0) {
+                display.value = message
+                return display.value
+            }
+            else {
+                return firstOperand / num
+            }
+        case '%':
+            return firstOperand * num / 100;
+        default:
+            return num;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
