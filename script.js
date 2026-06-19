@@ -83,9 +83,15 @@ buttons.forEach(button => {
                     display.value = '-';
                     return;
                 }
-                else {
+                if (!isNaN(currentInput)) {
                     currentInput += '';
                     display.value += '';
+                }
+                else {
+                    display.value = '';
+                    currentInput = '';
+                    isResultDisplayed = true;
+                    return;
                 }
 
             }
@@ -95,10 +101,17 @@ buttons.forEach(button => {
                     display.value = '';
                     return;
                 }
-                else {
+                if (!isNaN(currentInput)) {
                     currentInput += '';
                     display.value += '';
                 }
+                else {
+                    display.value = '';
+                    currentInput = '';
+                    isResultDisplayed = true;
+                    return;
+                }
+
 
             }
             if (value === '×') {
@@ -107,9 +120,15 @@ buttons.forEach(button => {
                     display.value = '';
                     return;
                 }
-                else {
+                if (!isNaN(currentInput)) {
                     currentInput += '';
                     display.value += '';
+                }
+                else {
+                    display.value = '';
+                    currentInput = '';
+                    isResultDisplayed = true;
+                    return;
                 }
 
             }
@@ -119,9 +138,15 @@ buttons.forEach(button => {
                     display.value = '';
                     return;
                 }
-                else {
+                if (!isNaN(currentInput)) {
                     currentInput += '';
                     display.value += '';
+                }
+                else {
+                    display.value = '';
+                    currentInput = '';
+                    isResultDisplayed = true;
+                    return;
                 }
 
             }
@@ -131,9 +156,15 @@ buttons.forEach(button => {
                     display.value = '';
                     return;
                 }
-                else {
+                if (!isNaN(currentInput)) {
                     currentInput += '';
                     display.value += '';
+                }
+                else {
+                    display.value = '';
+                    currentInput = '';
+                    isResultDisplayed = true;
+                    return;
                 }
 
             }
@@ -204,6 +235,7 @@ buttons.forEach(button => {
         else if (value === 'backspace') {
             display.value = display.value.slice(0, -1);
             currentInput = currentInput.slice(0, -1)
+
         }
     });
 });
