@@ -1,3 +1,24 @@
+window.addEventListener('load', function () {
+    const videoContainer = document.getElementById('loader-video-container');
+    const video = document.getElementById('loader-video');
+
+    // Функция для скрытия видео
+    function hideLoader() {
+        videoContainer.style.opacity = '0';
+        setTimeout(() => {
+            videoContainer.style.display = 'none';
+        }, 500); // Время должно совпадать с transition в CSS (0.5s)
+    }
+
+    // Если видео уже загрузилось быстрее, чем страница
+    if (video.ended) {
+        hideLoader();
+    } else {
+        // Ждем, пока видео доиграет до конца
+        video.addEventListener('ended', hideLoader);
+    }
+});
+
 
 const btnclear = document.getElementById('btnclear');
 const soundclear = document.getElementById('soundclear');
