@@ -19,7 +19,6 @@ window.addEventListener('load', function () {
     }
 });
 
-
 const btnclear = document.getElementById('btnclear');
 const soundclear = document.getElementById('soundclear');
 const btnac = document.getElementById('btnac');
@@ -61,7 +60,7 @@ let currentInput = '';
 let firstOperand = null;
 let operator = null;
 let isResultDisplayed = false;
-let message = 'ПОШЕЛ НАХУЙ  '
+// let message = 'ПОШЕЛ НАХУЙ  '
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
@@ -80,6 +79,7 @@ buttons.forEach(button => {
                     currentInput += '';
                     display.value += '';
                 }
+
                 else {
                     display.value = '';
                     currentInput = '';
@@ -126,13 +126,13 @@ buttons.forEach(button => {
                     currentInput += '';
                     display.value += '';
                 }
+
                 else {
                     display.value = '';
                     currentInput = '';
                     isResultDisplayed = true;
                     return;
                 }
-
 
             }
             if (value === '×') {
@@ -144,13 +144,16 @@ buttons.forEach(button => {
                 if (!isNaN(currentInput)) {
                     currentInput += '';
                     display.value += '';
+
                 }
+
                 else {
                     display.value = '';
                     currentInput = '';
                     isResultDisplayed = true;
                     return;
                 }
+
 
             }
             if (value === '÷') {
@@ -182,6 +185,7 @@ buttons.forEach(button => {
                     display.value += '';
                 }
                 else {
+
                     display.value = '';
                     currentInput = '';
                     isResultDisplayed = true;
@@ -225,13 +229,13 @@ buttons.forEach(button => {
             } else if (currentInput === '-') {
                 num = -parseFloat(currentInput.slice(1));
             }
-            if (operator && firstOperand !== null) {
+            if (operator && firstOperand !== null && !isNaN(firstOperand)) {
                 const result = computeResult(firstOperand, operator, num);
                 display.value = result;
                 firstOperand = result;
                 currentInput = result.toString();
-
             }
+
             else if (isNaN(currentInput)) {
                 display.value = '0';
                 currentInput = '';
@@ -255,8 +259,7 @@ buttons.forEach(button => {
         }
         else if (value === 'backspace') {
             display.value = display.value.slice(0, -1);
-            currentInput = currentInput.slice(0, -1)
-
+            currentInput = currentInput.slice(0, -1);
         }
     });
 });
@@ -272,7 +275,7 @@ function computeResult(firstOperand, operator, num) {
             return firstOperand * num;
         case '÷':
             if (num === 0 || firstOperand === 0) {
-                display.value = message
+                display.value = 'ПОШЕЛ НАХУЙ  '
                 return display.value
             }
             else {
